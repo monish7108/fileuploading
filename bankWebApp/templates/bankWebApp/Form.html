@@ -1,0 +1,29 @@
+<!--{% load static %}-->
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="{% static 'bankWebApp/main.js' %}">
+</script>
+<link rel="stylesheet" href="{% static 'bankWebApp/main.css' %}">
+<title>Sign Up</title>
+</head>
+<body>
+<h1><center>Please Fill in the information below to proceed..</center></h1>
+<!--{{form}}-->
+<form name="myform" method="POST">
+    <!--{% csrf_token %}-->
+
+    Enter Account ID: <input type="number" name="cust_account_id"><br>
+	Enter Customer Name:  <input type="text" name="cust_name" onblur="firstNameError()">&nbsp;&nbsp;<font color="red" id="firstmsg"></font><br>
+	Address:<br>
+	<textarea rows="3" name="cust_address" cols="50"></textarea><br>
+    Enter BirthDate:   <input type="date" name="cust_dob"><br>
+	Enter email:	   <input type="text" name="cust_email" onblur="emailError()">&nbsp;&nbsp;<font color="red" id="emailmsg"></font><br>
+    Enter Balance: <input type="number" name="cust_balance"><br>
+    <input type="submit" name="submit" value="submit" onsubmit="redirecting()">
+
+</form>
+<p id="printvalue"></p>
+
+</body>
+</html>
