@@ -7,7 +7,8 @@ class cust_details(models.Model):
     cust_dob=models.DateField(verbose_name="cust_dob", auto_now_add=True)
     cust_email=models.EmailField()
     cust_balance=models.IntegerField()
+    cust_picture = models.FileField(upload_to="pictures/")
 
     def __str__(self):
-        details=str(self.cust_account_id)+" "+self.cust_name+" "+str(self.cust_balance)+" "+self.cust_address
+        details=str(self.cust_account_id)+" "+self.cust_name
         return details
